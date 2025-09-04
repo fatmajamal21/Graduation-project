@@ -955,3 +955,175 @@ aside {
    تم الإبقاء على آخر تعريف (grid) الخاص بقسم المميزات أعلاه. */
 /* مكرر: .search-bar input تمت تهيئته أكثر من مرة — تم توحيده هنا. */
 /* مكرر: تنسيقات نص p تحت الميديا كويري ظهرت سابقًا — تم الإبقاء على آخر تحديد. */
+
+
+
+
+
+
+
+
+
+
+
+/* ___________________________________________________________________________________________________________________________________________________ */
+
+/*صفحة ال story */
+/* صفحة القصة */
+.story-page {
+    display: flex;
+    gap: 100px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    align-items: flex-start;
+    /* عكس اتجاه الفليكس */
+    flex-direction: row-reverse;
+}
+
+/* القسم الأيمن (الغلاف سابقًا أصبح أيسر) */
+.story-cover {
+    position: relative;
+    flex: 0 0 350px;
+}
+
+.story-cover img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.heart-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    /* غيرت من left إلى right */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.heart-btn:hover {
+    transform: scale(1.1);
+}
+
+.heart-btn i {
+    color: #7CB342;
+    font-size: 20px;
+}
+
+/* القسم الأيسر (التفاصيل سابقًا أصبح أيمن) */
+.story-details {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.story-details h1 {
+    color: #7CB342;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.date {
+    float: left;
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.story-details p {
+    margin-top: 15px;
+
+    line-height: 1.7;
+    margin-bottom: 15px;
+    /* font-weight: bold; */
+    font-size: 16px;
+    color: #626262;
+}
+
+.story-details .tetel {
+    padding: 10px;
+    border: 1px solid #7CB342;
+    border-radius: 10px;
+}
+
+.story-details .tetel p {
+    font-weight: bold;
+}
+
+.author-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.author-box img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin: 0;
+    color: #626262;
+}
+
+.author-info span {
+    color: #626262;
+    font-size: 14px;
+}
+
+/* الأزرار معكوسة الألوان */
+.story-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #7CB342;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* الزر الأخضر أصبح أبيض مع نص أخضر */
+.btn.read {
+
+
+    background: #7CB342;
+    color: #fff;
+}
+
+.btn.read:hover {
+    background: #6aa02f;
+}
+
+/* الزر الأبيض أصبح أخضر مع نص أبيض */
+.btn.listen {
+    background: #fff;
+    color: #7CB342;
+}
+
+.btn.listen:hover {
+
+    background: #f1f9ec;
+}
