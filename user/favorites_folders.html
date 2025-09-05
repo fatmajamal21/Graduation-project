@@ -55,44 +55,35 @@
 
 
     <div class="container">
+        <div class="story_favorites story">
+            <h3>المجلدات</h3>
 
-
-        <div class="story-page">
-            <!-- الغلاف -->
-            <div class="story-cover">
-                <img src="../img/s3.png" alt="غلاف القصة">
-                <div class="heart-btn"><i>♡</i></div>
-            </div>
-
-            <!-- التفاصيل -->
-            <div class="story-details">
-                <div class="date">17/5/2023</div>
-                <h1>الطاووس المغرور</h1>
-                <p>قصة قصيرة للأطفال تستهدف الأطفال من عمر 3-6 سنوات. تعزز فيهم مجموعة من القيم الأخلاقية والتربوية
-                    التي تساهم في تفكير ونمو الطفل بطريقة سليمة.</p>
-
-                <div class="author-box">
-                    <img src="../img/user.png" alt="المؤلف">
-                    <div class="author-info">
-                        <h4>ليلى صايا</h4>
-                        <span>كاتبة سورية وعضو اتحاد الكتاب العرب</span>
+            <div class="folders-container">
+                <!-- العمود الأول: المجلدات -->
+                <div class="folders-column">
+                    <div class="folder" style="  background: #cbad16;">
+                        <div class="folder-badge">12</div>
+                        <div class="folder-name">قصصي</div>
+                    </div>
+                    <div class="folder" style="  background: #067641;">
+                        <div class="folder-badge">8</div>
+                        <div class="folder-name">مكتبتي</div>
                     </div>
                 </div>
 
-                <p>سارة طه قامت بتدقيق النصوص المنتجة، وإجراء بعض التعديلات عليها وقامت بتجريد النص من كافة الأخطاء
-                    الإملائية واللغوية والقواعدية كذلك.</p>
-                <div class="tetel">
-                    <p> نفش الطاووس المغرور ريشه وقال للحيوانات "أنا أجمل الحيوانات ولن أرضى أن تكونوا
-                        أصدقاء لي". لكن الطاووس مرّ بحادثة جعلته يتراجع عن موقفه تجاه أصدقائه الذين لم يتخلوا عنه.</p>
-                </div>
-                <div class="story-actions">
-                    <a href="#" class="btn read">قراءة القصة 📖</a>
-                    <a href="#" class="btn listen">الاستماع للقصة 🎧</a>
+                <!-- العمود الثاني: الصورة -->
+                <div class="favorites_img">
+                    <img src="../img/favorites_folders.png" alt="">
                 </div>
             </div>
         </div>
 
+
+
     </div>
+
+
+
     <!-- footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -163,6 +154,16 @@
 
 
     <script>
+
+        // إضافة تأثيرات عند النقر على المجلدات
+        document.querySelectorAll('.folder').forEach(folder => {
+            folder.addEventListener('click', function () {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
         document.addEventListener('DOMContentLoaded', function () {
             // الحصول على جميع روابط القائمة
             const navLinks = document.querySelectorAll('.nav-links a');

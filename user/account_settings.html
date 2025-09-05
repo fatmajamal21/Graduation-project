@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> صفحة القصة | المستخدم </title>
+    <title> لمستخدم | إعدادات الحساب</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
 <body>
-    <!-- nav-->
+    <!-- شريط التنقل -->
     <nav>
         <div class="nav-container">
             <div class="logo">
@@ -52,48 +52,50 @@
             </div> -->
         </div>
     </nav>
+    <div class="container_account">
+        <div class="header_account">
+            <a href="../user/edit_account.html" class="edit-btn" title="تعديل الصفحة">
+                <i class="fas fa-pen"></i>
+            </a>
 
-
-    <div class="container">
-
-
-        <div class="story-page">
-            <!-- الغلاف -->
-            <div class="story-cover">
-                <img src="../img/s3.png" alt="غلاف القصة">
-                <div class="heart-btn"><i>♡</i></div>
-            </div>
-
-            <!-- التفاصيل -->
-            <div class="story-details">
-                <div class="date">17/5/2023</div>
-                <h1>الطاووس المغرور</h1>
-                <p>قصة قصيرة للأطفال تستهدف الأطفال من عمر 3-6 سنوات. تعزز فيهم مجموعة من القيم الأخلاقية والتربوية
-                    التي تساهم في تفكير ونمو الطفل بطريقة سليمة.</p>
-
-                <div class="author-box">
-                    <img src="../img/user.png" alt="المؤلف">
-                    <div class="author-info">
-                        <h4>ليلى صايا</h4>
-                        <span>كاتبة سورية وعضو اتحاد الكتاب العرب</span>
-                    </div>
-                </div>
-
-                <p>سارة طه قامت بتدقيق النصوص المنتجة، وإجراء بعض التعديلات عليها وقامت بتجريد النص من كافة الأخطاء
-                    الإملائية واللغوية والقواعدية كذلك.</p>
-                <div class="tetel">
-                    <p> نفش الطاووس المغرور ريشه وقال للحيوانات "أنا أجمل الحيوانات ولن أرضى أن تكونوا
-                        أصدقاء لي". لكن الطاووس مرّ بحادثة جعلته يتراجع عن موقفه تجاه أصدقائه الذين لم يتخلوا عنه.</p>
-                </div>
-                <div class="story-actions">
-                    <a href="#" class="btn read">قراءة القصة 📖</a>
-                    <a href="#" class="btn listen">الاستماع للقصة 🎧</a>
+            <!-- <h1>إعدادات الحساب</h1> -->
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="../img/user - Copy.png" alt="صورة المستخدم">
                 </div>
             </div>
+
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="email">الإيميل</label>
+                <input type="email" class="form-control" id="email" value="marie@gmail.com" readonly>
+                <i class="fas fa-envelope input-icon1"></i>
+            </div>
+
+            <div class="form-group">
+                <label for="username">اسم المستخدم</label>
+                <input type="text" class="form-control" id="username" value="محمد أبهم">
+                <i class="fas fa-user input-icon1"></i>
+            </div>
+
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <div class="password-container">
+                    <input type="password" class="form-control" id="password" value="********">
+                    <button class="toggle-password" type="button">
+                        <i class="input-icon2 fas fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+
+
+
         </div>
 
     </div>
-    <!-- footer -->
     <footer class="footer">
         <div class="footer-container">
 
@@ -160,40 +162,37 @@
         </div>
     </footer>
 
-
-
     <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const togglePassword = document.querySelector('.toggle-password');
+        //     const passwordInput = document.querySelector('#password');
+
+        //     togglePassword.addEventListener('click', function () {
+        //         if (passwordInput.type === 'password') {
+        //             passwordInput.type = 'text';
+        //             togglePassword.textContent = 'إخفاء';
+        //         } else {
+        //             passwordInput.type = 'password';
+        //             togglePassword.textContent = 'إظهار';
+        //         }
+        //     });
+        // });
         document.addEventListener('DOMContentLoaded', function () {
-            // الحصول على جميع روابط القائمة
-            const navLinks = document.querySelectorAll('.nav-links a');
+            const togglePassword = document.querySelector('.toggle-password i');
+            const passwordInput = document.querySelector('#password');
 
-            // إضافة مستمع حدث لكل رابط
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    // إزالة الصنف النشط من جميع الروابط
-                    navLinks.forEach(item => item.classList.remove('active'));
-
-                    // إضافة الصنف النشط للرابط المختار
-                    this.classList.add('active');
-
-                    // إخفاء جميع محتويات الصفحات
-                    const allContents = document.querySelectorAll('.content');
-                    allContents.forEach(content => content.classList.remove('active'));
-
-                    // إظهار المحتوى المناسب حسب الرابط
-                    const target = this.getAttribute('href').substring(1);
-                    const targetContent = document.getElementById(`${target}-content`);
-
-                    if (targetContent) {
-                        targetContent.classList.add('active');
-                    }
-                });
+            document.querySelector('.toggle-password').addEventListener('click', function () {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    togglePassword.classList.remove('fa-eye');
+                    togglePassword.classList.add('fa-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    togglePassword.classList.remove('fa-eye-slash');
+                    togglePassword.classList.add('fa-eye');
+                }
             });
         });
-
-
 
     </script>
 </body>

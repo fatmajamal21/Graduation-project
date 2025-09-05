@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستخدم | إعدادات الحساب</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* إعدادات الحساب */
+        body {
+            font-family: "Tahoma", Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container_account {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .header_account {
+            background: linear-gradient(90deg, #f2f2f2 0%, #fff 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background-color: #e9ecef;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .form-container {
+            padding: 25px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+            background-color: #fafafa;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #78a218;
+            box-shadow: 0 0 0 3px rgba(120, 162, 24, 0.2);
+            outline: none;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: block;
+            width: 70%;
+            margin: 20px auto 0;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #78a218, #6c9415);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #6c9415, #587a12);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(120, 162, 24, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        @media (max-width: 576px) {
+            .container_account {
+                margin: 20px;
+                border-radius: 12px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .profile-img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container_account">
+        <div class="header_account">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="../img/user - Copy.png" alt="صورة المستخدم">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="email">الإيميل</label>
+                <input type="email" class="form-control" id="email" value="marie@gmail.com" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="username">اسم المستخدم</label>
+                <input type="text" class="form-control" id="username" value="محمد أبهم">
+            </div>
+
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <div class="password-container">
+                    <input type="password" class="form-control" id="password" value="********">
+                    <button class="toggle-password" type="button">إظهار</button>
+                </div>
+            </div>
+
+            <button class="btn">حفظ</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordInput = document.querySelector('#password');
+
+            togglePassword.addEventListener('click', function () {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    togglePassword.textContent = 'إخفاء';
+                } else {
+                    passwordInput.type = 'password';
+                    togglePassword.textContent = 'إظهار';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
